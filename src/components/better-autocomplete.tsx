@@ -50,7 +50,7 @@ export default function BetterAutocomplete({ options }: AutocompleteProps) {
                     anchor="bottom"
                     transition
                     className={clsx(
-                        'w-[var(--input-width)] rounded-xl border border-white/5 bg-white/5 p-1 [--anchor-gap:var(--spacing-1)] empty:invisible',
+                        'w-[var(--input-width)] text-black rounded-xl border border-white bg-gray-100 p-1 [--anchor-gap:var(--spacing-1)] empty:invisible',
                         'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0'
                     )}
                 >
@@ -58,10 +58,10 @@ export default function BetterAutocomplete({ options }: AutocompleteProps) {
                         <ComboboxOption
                             key={option.value}
                             value={option}
-                            className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white/10"
+                            className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-white"
                         >
                             <CheckIcon className="invisible size-4 fill-white group-data-[selected]:visible" />
-                            <div className="text-sm/6 text-white">{option.label}</div>
+                            <div className="text-sm/6 text-black">{option.label}</div>
                         </ComboboxOption>
                     ))}
                 </ComboboxOptions>
