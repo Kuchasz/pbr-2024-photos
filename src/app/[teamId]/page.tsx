@@ -1,9 +1,8 @@
 import { redirect } from "next/navigation";
+import BasePage from "~/components/base-page";
+import { formatMilliseconds, sortBy } from "~/utils";
 import images from "../../data/images.json";
 import teams from "../../data/teams.json";
-import BasePage from "~/components/base-page";
-import Image from "next/image";
-import { formatMilliseconds, sortBy } from "~/utils";
 
 function timestampsMatch(timestamp1: number, timestamp2: number, accuracy: number): boolean {
   return Math.abs(timestamp1 - timestamp2) <= accuracy;
