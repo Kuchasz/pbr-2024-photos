@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import BasePage from "~/components/base-page";
-import { formatMilliseconds, getStsImageUrl, sortBy } from "~/utils";
+import { formatMilliseconds, getPlayerName, getStsImageUrl, sortBy } from "~/utils";
 import images from "../../../data/images.json";
 import teams from "../../../data/teams.json";
 import {
@@ -23,7 +23,7 @@ export default function HomePage({ params: { teamId, photoId } }: { params: { ph
     return redirect('/nice-try');
   }
 
-  const imagesForPlayers = team.times.map((time, index) => ({ time, name: `Player ${index + 1}`, images: sortBy(images.filter(i => timestampsMatch(i.time, time, 3000)), 'time') }));
+  const imagesForPlayers = team.times.map((time, index) => ({ time, name: getPlayerName(teamId, index), images: sortBy(images.filter(i => timestampsMatch(i.time, time, 3000)), 'time') }));
   const imagesToShow = imagesForPlayers.flatMap(p => p.images.map(i => ({ ...p, ...i })));
   const initialPhoto = imagesToShow.find(i => i.time === Number(photoId))!;
 
@@ -39,9 +39,11 @@ export default function HomePage({ params: { teamId, photoId } }: { params: { ph
         }} className="w-full text-black">
           <CarouselContent >
             {imagesToShow.map((i) => (
-              <CarouselItem className="text-white" key={i.url}>
-                <h3 className="text-lg">{i.name} ({formatMilliseconds(i.time)})</h3>
-                <img src={getStsImageUrl(i.url)} alt={i.name} />
+              <CarouselItem className="flex flex-col items-center text-white" key={i.url}>
+                <div className="flex flex-col">
+                  <h3 className="text-lg">{i.name} ({formatMilliseconds(i.time)})</h3>
+                  <img className="" src={getStsImageUrl(i.url)} alt={i.name} />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>

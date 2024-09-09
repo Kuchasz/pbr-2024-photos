@@ -23,3 +23,5 @@ export function formatMilliseconds(ms: number): string {
 }
 
 export const getStsImageUrl = (imageId: string) => `https://live.sts-timing.pl/businessrun2024/photo1/172.20.23.182_01_20240908${imageId}`;
+
+export const getPlayerName = (teamId: string, index: number) => `Player: ${teamId} / ${['A', 'B', 'C', 'D', 'E'][index]}`;
