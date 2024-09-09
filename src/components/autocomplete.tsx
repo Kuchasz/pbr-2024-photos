@@ -20,7 +20,6 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options }) => {
     // Filter options based on query
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setQuery(value);
 
         if (value.length > 0) {
             const filtered = options.filter(option =>
@@ -32,6 +31,8 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options }) => {
             setFilteredOptions([]);
             setIsDropdownOpen(false);
         }
+        
+        setQuery(value);
     };
 
     // Handle selection of an option

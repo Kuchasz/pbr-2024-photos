@@ -1,6 +1,6 @@
-import Autocomplete from "~/components/autocomplete";
 import BasePage from "~/components/base-page";
 import teams from "../data/teams.json";
+import BetterAutocomplete from "~/components/better-autocomplete";
 
 export default function HomePage() {
 
@@ -12,7 +12,7 @@ export default function HomePage() {
         </h1>
         {/* {teams.map((team) => (<div key={team.id}>{team.name}</div>))} */}
 
-        <Autocomplete options={teams.map(t => ({ label: t.name, value: t.id }))} />
+        <BetterAutocomplete options={teams.map(t => ({ label: t.name, value: t.id }))} />
 
       </div>
     </BasePage>

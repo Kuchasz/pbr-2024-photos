@@ -17,7 +17,7 @@ export default function HomePage({ params: { teamId } }: { params: { teamId: str
     return redirect('/nice-try');
   }
 
-  const imagesForPlayers = team.times.map((time, index) => ({ time, name: `Player ${index + 1}`, images: sortBy(images.filter(i => timestampsMatch(i.time, time, 5000)), 'time') }));
+  const imagesForPlayers = team.times.map((time, index) => ({ time, name: `Player ${index + 1}`, images: sortBy(images.filter(i => timestampsMatch(i.time, time, 3000)), 'time') }));
 
   return (
     <BasePage>
