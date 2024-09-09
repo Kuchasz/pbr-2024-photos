@@ -28,7 +28,7 @@ export default function BetterAutocomplete({ options }: AutocompleteProps) {
 
     return (
         <div className="mx-auto h-screen text-gray-600 w-52 pt-20">
-            <Combobox onChange={(option) => option && void router.push(`/${option.value}`)} onClose={() => setQuery('')}>
+            <Combobox onChange={(option: Option) => void router.push(`/${(option).value}`)} onClose={() => setQuery('')}>
                 <div className="relative">
                     <ComboboxInput
                         className={clsx(
