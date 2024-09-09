@@ -8,6 +8,7 @@ export default function HomePage() {
   return (
     <BasePage>
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
+        <div><img className="max-h-24" src="logo-fundacja.png"></img><span className="font-medium">Poland Business Run 2024</span></div>
         <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
           Find your team&apos;s photos
         </h1>
