@@ -36,7 +36,7 @@ export default function BetterAutocomplete({ options }: AutocompleteProps) {
                             // 'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25',
                             "bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
                         )}
-                        placeholder='Search'
+                        placeholder='Your team name...'
                         onChange={(event) => setQuery(event.target.value)}
                     />
                     <button type="submit" className="absolute right-0 top-0 mt-3 mr-1">
